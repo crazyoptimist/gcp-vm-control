@@ -12,4 +12,10 @@ builds:
       - amd64
 archives:
   - #
-    format: zip
+    format_overrides:
+      - # Which GOOS to override the format for.
+        goos: windows
+        # The format to use for the given GOOS.
+        # Valid options are `tar.gz`, `tgz`, `tar.xz`, `txz`, tar`, `gz`, `zip`, `binary`, and `none`.
+        # Default is `tar.gz`
+        format: zip

@@ -20,7 +20,7 @@ var resetCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		initConfig()
 		err := vmcontrol.ResetInstance(
-			os.Stdin,
+			os.Stdout,
 			viper.GetString("ProjectID"),
 			viper.GetString("Zone"),
 			viper.GetString("InstanceName"),

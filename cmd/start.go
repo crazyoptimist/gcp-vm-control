@@ -20,7 +20,7 @@ var startCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		initConfig()
 		err := vmcontrol.StartInstance(
-			os.Stdin,
+			os.Stdout,
 			viper.GetString("ProjectID"),
 			viper.GetString("Zone"),
 			viper.GetString("InstanceName"),
