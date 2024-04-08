@@ -4,9 +4,12 @@ Copyright © 2024 crazyoptimist <hey@crazyoptimist.net>
 package cmd
 
 import (
-	"fmt"
+	"gcp-vm-control/pkg/vmcontrol"
+	"log"
+	"os"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 // startCmd represents the start command
@@ -20,13 +23,21 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		initConfig()
-		fmt.Println("start called")
+		err := vmcontrol.StartInstance(
+			os.Stdin,
+			viper.GetString("ProjectID"),
+			viper.GetString("Zone"),
+			viper.GetString("InstanceName"),
+		)
+		if err != nil {
+			log.Fatalln("Operation failed: ", err)
+		}
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(startCmd)
+	initConfig()
 
 	// Here you will define your flags and configuration settings.
 
