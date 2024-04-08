@@ -51,7 +51,7 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.config/gcp-vm-control.toml)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.config/gcp-vm-control.toml or $APPDATA\\gcp-vm-control\\gcp-vm-control.toml on Windows)")
 }
 
 func initConfig() {

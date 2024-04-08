@@ -50,27 +50,17 @@ func readinConfig() *appConfig {
 	stdinReader := bufio.NewReader(os.Stdin)
 
 	fmt.Print("Enter your Google Cloud ProjectID: ")
-	ProjectID := getUserInput(stdinReader)
+	ProjectID := utils.GetUserInput(stdinReader)
 	fmt.Print("Enter your instance's Zone Name: ")
-	Zone := getUserInput(stdinReader)
+	Zone := utils.GetUserInput(stdinReader)
 	fmt.Print("Enter your instance name: ")
-	InstanceName := getUserInput(stdinReader)
+	InstanceName := utils.GetUserInput(stdinReader)
 
 	return &appConfig{
 		ProjectID,
 		Zone,
 		InstanceName,
 	}
-}
-
-func getUserInput(reader *bufio.Reader) string {
-	val, err := reader.ReadString('\n')
-	if err != nil {
-		log.Fatalln("Malformed input. Please start over.")
-	}
-	// Remove newline character from the end of the input
-	val = val[:len(val)-1]
-	return val
 }
 
 func generateConfigFile(config appConfig, path string) error {
