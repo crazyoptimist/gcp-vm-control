@@ -22,3 +22,9 @@ gcloud init
 # Generate ADC (application default credentials)
 gcloud auth application-default login
 ```
+
+## Usage
+
+```bash
+gcp-vm-control --help
+```

@@ -18,7 +18,7 @@ import (
 // configCmd represents the config command
 var configCmd = &cobra.Command{
 	Use:   "config",
-	Short: "Configure the application.",
+	Short: "Configure the application",
 	Long: `Provide necessary config values, then the application will
 generate a configuration file.`,
 	Run: func(cmd *cobra.Command, args []string) {

@@ -19,6 +19,7 @@ var rootCmd = &cobra.Command{
 	Short: "Control GCP VM",
 	Long: `Turn on and off Google Cloud Virtual Machines.
 
+###################################################################################
 To use this application, you need to generate ADC (application default credentials)
 
 Install the GCP CLI:
@@ -29,6 +30,7 @@ gcloud init
 
 Generate ADC:
 gcloud auth application-default login
+###################################################################################
 `,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
