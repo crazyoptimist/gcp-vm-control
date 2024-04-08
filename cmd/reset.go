@@ -18,6 +18,7 @@ var resetCmd = &cobra.Command{
 	Short: "Resets the VM",
 	Long:  `Resets the VM`,
 	Run: func(cmd *cobra.Command, args []string) {
+		initConfig()
 		err := vmcontrol.ResetInstance(
 			os.Stdin,
 			viper.GetString("ProjectID"),
@@ -32,7 +33,6 @@ var resetCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(resetCmd)
-	initConfig()
 
 	// Here you will define your flags and configuration settings.
 

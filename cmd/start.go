@@ -18,6 +18,7 @@ var startCmd = &cobra.Command{
 	Short: "Starts the VM",
 	Long:  `Starts the VM`,
 	Run: func(cmd *cobra.Command, args []string) {
+		initConfig()
 		err := vmcontrol.StartInstance(
 			os.Stdin,
 			viper.GetString("ProjectID"),
@@ -32,7 +33,6 @@ var startCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(startCmd)
-	initConfig()
 
 	// Here you will define your flags and configuration settings.
 

@@ -19,6 +19,7 @@ var stopCmd = &cobra.Command{
 	Short: "Stops the VM",
 	Long:  `Stops the VM`,
 	Run: func(cmd *cobra.Command, args []string) {
+		initConfig()
 		err := vmcontrol.StopInstance(
 			os.Stdin,
 			viper.GetString("ProjectID"),
@@ -33,7 +34,6 @@ var stopCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(stopCmd)
-	initConfig()
 
 	// Here you will define your flags and configuration settings.
 
