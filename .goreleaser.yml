@@ -1,0 +1,15 @@
+project_name: gcp-vm-control
+builds:
+  - #
+    env:
+      - CGO_ENABLED=0
+    main: .
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+archives:
+  - #
+    format: zip
