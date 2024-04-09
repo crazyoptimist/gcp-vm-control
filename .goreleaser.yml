@@ -19,3 +19,6 @@ archives:
         # Valid options are `tar.gz`, `tgz`, `tar.xz`, `txz`, tar`, `gz`, `zip`, `binary`, and `none`.
         # Default is `tar.gz`
         format: zip
+signs:
+  - #
+    artifacts: binary
