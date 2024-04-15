@@ -4,9 +4,10 @@ Copyright © 2024 crazyoptimist <hey@crazyoptimist.net>
 package cmd
 
 import (
-	"gcp-vm-control/pkg/vmcontrol"
 	"log"
 	"os"
+
+	"gcp-vm-control/pkg/vmcontrol"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
